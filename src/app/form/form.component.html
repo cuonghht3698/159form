@@ -1,0 +1,74 @@
+<div class="container-form">
+  <div class="text-center"><label style="font-size: 50px;margin-top: 40px;"> Demo</label></div>
+  <form action="" #formDemo="ngForm" autocomplete="off">
+    <!--name -->
+    <mat-form-field appearance="outline" class="mat-input">
+      <mat-label class="mat-label">Name</mat-label>
+      <input matInput placeholder="Your name?" #username="ngModel" required [(ngModel)]="user.username"
+        [pattern]="userPattern" name="username">
+
+      <mat-error *ngIf="username.touched || !username.valid">
+        <span *ngIf="username.errors.required">Tài khoản không được để trống</span>
+        <span *ngIf="username.errors.pattern">Không đúng kiểu dữ liệu</span>
+
+      </mat-error>
+    </mat-form-field>
+
+    <!-- email -->
+    <mat-form-field appearance="outline" class="mat-input">
+      <mat-label class="mat-label">Email</mat-label>
+      <input matInput placeholder="Your name?" #email="ngModel" [(ngModel)]="user.email" [pattern]="emailPattern" required
+        name="email">
+      <mat-error *ngIf="email.touched || !email.valid">
+        <span *ngIf="email.errors.required">Email không được để trống</span>
+        <span *ngIf="email.errors.pattern">Không đúng kiểu dữ liệu</span>
+
+      </mat-error>
+    </mat-form-field>
+    <!-- phone -->
+    <mat-form-field appearance="outline" class="mat-input">
+      <mat-label class="mat-label">Phone Number</mat-label>
+      <input matInput placeholder="Your name?" #phone="ngModel" [(ngModel)]="user.phone" minlength="6" maxlength="10" required
+        [pattern]="phonePattern" name="phone">
+      <mat-error *ngIf="phone.touched || !phone.valid">
+        <span *ngIf="phone.errors.required"> không được để trống</span>
+        <span *ngIf="phone.errors.pattern">Không đúng kiểu dữ liệu</span>
+
+      </mat-error>
+    </mat-form-field>
+    <!-- PASS1 -->
+    <mat-form-field appearance="outline" class="mat-input">
+      <mat-label class="mat-label">Password</mat-label>
+      <input matInput type="password" placeholder="Your name?" #password="ngModel" [(ngModel)]="user.password" minlength="6" maxlength="50"
+        name="password">
+      <mat-error *ngIf="password.touched || !password.valid">
+        <span *ngIf="password.errors.required">Mật khẩu không được để trống</span>
+        <!-- <span *ngIf="password.errors.pattern">Mật khẩu không hợp lệ</span> -->
+        <span *ngIf="password.errors.minlength || password.errors.maxlength">Length from 6 to 32 characters</span>
+
+
+      </mat-error>
+    </mat-form-field>
+    <!-- END PASS1 -->
+
+    <!-- PASS2 -->
+    <!-- <mat-form-field appearance="outline" class="mat-input">
+      <mat-label class="mat-label">Password</mat-label>
+      <input matInput type="password" placeholder="Your name?" #password2="ngModel" [(ngModel)]="user.password2" minlength="6" maxlength="50"
+        name="password2">
+      <mat-error *ngIf="password2.touched || !password2.valid ">
+        <span *ngIf="password2.errors.required">Mật khẩu không được để trống</span>
+
+        <span *ngIf="password2.errors.minlength">Mật khẩu quá ngắn</span>
+        <span *ngIf="password2.errors.maxlength">Mật khẩu quá dài</span>
+        <span *ngIf="password2.value!=password.value">Mật khẩu không giống nhau!</span>
+
+      </mat-error>
+    </mat-form-field> -->
+    <button mat-raised-button type="submit" color="primary" class="mt-5 p-4">SAVE</button>
+  </form>
+  <br>
+  <!-- <code>{{ user | json }}</code> -->
+
+
+</div>

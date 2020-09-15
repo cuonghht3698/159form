@@ -1,0 +1,30 @@
+.container-form {
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  margin: auto;
+  margin-top: 200px;
+  background-color: rgb(255, 255, 255);
+}
+.container-form button{
+  outline: none;
+}
+.container-form  form{
+text-align: center;
+background:none;
+}
+.container-form .mat-input {
+  width: 80%;
+  height: 20px;
+  background:none;
+  margin: 40px;
+}
+.container-form .mat-input input{
+  background:none;
+  color: black;
+  font-size: 19px;
+}
+.container-form .mat-label {
+  font-size: 16px;
+}
